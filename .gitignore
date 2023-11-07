@@ -4,6 +4,9 @@
 
 #ignore postgre container
 postgres/postgres/
+caddy/caddy
+caddy/caddy_config
+caddy/caddy_data
 
 #ignore all the containers
 containers/
