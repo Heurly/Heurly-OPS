@@ -1,0 +1,9 @@
+# ignore all env
+*.env
+.env
+
+#ignore postgre container
+postgres/postgres/
+
+#ignore all the containers
+containers/
