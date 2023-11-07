@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  postgres:
+    container_name: db.heurly
+    image: postgres:16-alpine
+    volumes:
+      - /media/domesday/mdisk/postgre:/var/lib/postgresql/data
+    expose:
+      - 5432
+    ports:
+      - 7476:5432
+    environment:
+      - POSTGRES_PASSWORD=AwHYGU6L7WC4943T7f3DuH3bATc9Z8gA3BRQ6VMY3QJhktjKb6
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=heurly
+
+networks: 
+  esiee-hub-network: 
+    external: true

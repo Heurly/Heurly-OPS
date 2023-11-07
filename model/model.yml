@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  esiee-hub:
+    container_name: {{SERVICE}}.heurly
+    image: domesday/heurly:{{SERVICE}}
+    networks:
+      - esiee-hub-network
+    volumes:
+     - ./.env:/app/.env
+
+networks: 
+  esiee-hub-network: 
+    external: true

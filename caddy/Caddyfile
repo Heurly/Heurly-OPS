@@ -1,0 +1,39 @@
+{
+    email adamfrancetest@gmail.com
+}
+
+heurly.fr {
+    reverse_proxy main.heurly:3003
+}
+
+
+39-merge.heurly.fr {
+    reverse_proxy 39-merge.heurly:3003
+}
+
+40-merge.heurly.fr {
+    reverse_proxy 40-merge.heurly:3003
+}
+
+41-merge.heurly.fr {
+    reverse_proxy 41-merge.heurly:3003
+}
+
+43-merge.heurly.fr {
+    reverse_proxy 43-merge.heurly:3003
+}
+
+45-merge.heurly.fr {
+    reverse_proxy 45-merge.heurly:3003
+}
+
+44-merge.heurly.fr {
+    reverse_proxy 44-merge.heurly:3003
+}
+
+    
+    
+alpha.heurly.fr {
+        reverse_proxy alpha.heurly:3003
+    }
+    
