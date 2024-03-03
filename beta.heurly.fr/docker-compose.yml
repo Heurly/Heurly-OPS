@@ -2,8 +2,8 @@ version: '3'
 
 services:
   heurly:
-    container_name: {{SERVICE}}.heurly
-    image: domesday/heurly:{{SERVICE}}
+    container_name: beta.heurly
+    image: domesday/heurly:beta
     networks:
       - heurly-network
     volumes:

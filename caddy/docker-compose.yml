@@ -15,7 +15,7 @@ services:
       - caddy_data:/data
       - caddy_config:/config
     networks:
-      - esiee-hub-network
+      - heurly-network
       
 volumes:
   caddy_data:
@@ -23,5 +23,5 @@ volumes:
   caddy_config:
 
 networks: 
-  esiee-hub-network: 
+  heurly-network: 
     external: true

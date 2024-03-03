@@ -14,7 +14,7 @@ if [ $SERVICE = "main" ]; then
     url=$domain
 fi
 
-racine=/home/share/hub
+racine=/home/heurly/Heurly-OPS
 if [ $SERVICE != "main" ]; then
     if grep -q "$url" $racine/caddy/Caddyfile; then
         # Remove the site from the Caddyfile
@@ -32,7 +32,7 @@ fi
 # Redémarrer le proxy reverse
 
 cd $racine/caddy
-docker-compose restart
+docker compose restart
 
 
 # Désactive le container
@@ -40,7 +40,7 @@ docker-compose restart
 if [ -d "$racine/containers/$url" ]; then
   echo "Le dossier $racine/containers/$url existe."
   cd "$racine/containers/$url" || exit
-  docker-compose down
+  docker compose down
   docker rmi domesday/heurly:$SERVICE
   cd "$racine" || exit
   rm -rf "containers/$url"

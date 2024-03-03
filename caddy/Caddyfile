@@ -6,34 +6,16 @@ heurly.fr {
     reverse_proxy main.heurly:3003
 }
 
+    
 
-39-merge.heurly.fr {
-    reverse_proxy 39-merge.heurly:3003
+n8n.domesday.fr {
+    reverse_proxy 192.168.1.194:5678 {
+        flush_interval -1
+    }
 }
-
-40-merge.heurly.fr {
-    reverse_proxy 40-merge.heurly:3003
-}
-
-41-merge.heurly.fr {
-    reverse_proxy 41-merge.heurly:3003
-}
-
-43-merge.heurly.fr {
-    reverse_proxy 43-merge.heurly:3003
-}
-
-45-merge.heurly.fr {
-    reverse_proxy 45-merge.heurly:3003
-}
-
-44-merge.heurly.fr {
-    reverse_proxy 44-merge.heurly:3003
-}
-
     
     
-alpha.heurly.fr {
-        reverse_proxy alpha.heurly:3003
+beta.heurly.fr {
+        reverse_proxy beta.heurly:3003
     }
     

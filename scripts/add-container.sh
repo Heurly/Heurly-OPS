@@ -14,7 +14,7 @@ if [ $SERVICE = "main" ]; then
     url=$domain
 fi
 
-racine=/home/share/hub
+racine=/home/heurly/Heurly-OPS
 
 
 
@@ -27,12 +27,12 @@ sed "s/{{SERVICE}}/$SERVICE/g" $racine/model/model.yml > $url/docker-compose.yml
 cd $url
 cp $racine/.env .env
 echo "NEXTAUTH_URL=https://$url" >> .env
-echo "NEXT_PUBLIC_APP_URL=https://$url" >> .env
-docker-compose pull
-docker-compose up -d
+#echo "NEXT_PUBLIC_APP_URL=https://$url" >> .env
+docker compose pull
+docker compose up -d
 # Check if the site is already in the Caddyfile
 if [ $SERVICE != "main" ]; then
-    if grep -q "$url" "$racine/caddy/Caddyfile"; then
+    if grep "$url" "$racine/caddy/Caddyfile"; then
         echo "Site ($url) already in the Caddyfile"
         exit 0
     else
@@ -48,4 +48,4 @@ fi
 # Redémarrer le proxy reverse
 
 cd $racine/caddy
-docker-compose restart
+docker compose restart
