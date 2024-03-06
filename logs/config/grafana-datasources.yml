@@ -7,4 +7,5 @@ datasources:
     url: http://loki:3100
     version: 1
     editable: false
-    isDefault: true
+    isDefault: false
+    uid: P8E80F9AEF21F6940
