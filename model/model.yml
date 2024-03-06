@@ -4,6 +4,9 @@ services:
   heurly:
     container_name: {{SERVICE}}.heurly
     image: domesday/heurly:{{SERVICE}}
+    labels:
+      logging: "promtail"
+      logging_jobname: "containerlogs"
     networks:
       - heurly-network
     volumes:
