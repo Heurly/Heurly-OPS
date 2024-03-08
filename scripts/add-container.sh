@@ -14,7 +14,7 @@ if [ $SERVICE = "main" ]; then
     url=$domain
 fi
 
-racine=/home/heurly/Heurly-OPS
+racine="$(pwd)"
 
 
 

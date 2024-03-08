@@ -8,9 +8,8 @@ services:
       - ./config/grafana-datasources.yml:/etc/grafana/provisioning/datasources/datasources.yaml
       - ./config/dashboard.yaml:/etc/grafana/provisioning/dashboards/main.yaml
       - ./config/dashboards:/var/lib/grafana/dashboards
-    environment:
-      - GF_SECURITY_ADMIN_USER=heurly
-      - GF_SECURITY_ADMIN_PASSWORD=!R3YTRG89m!ctT!
+    env_file:
+      - .env
     entrypoint:
       - sh
       - -euc

@@ -14,7 +14,7 @@ if [ $SERVICE = "main" ]; then
     url=$domain
 fi
 
-racine=/home/heurly/Heurly-OPS
+racine="$(pwd)"
 if [ $SERVICE != "main" ]; then
     if grep -q "$url" $racine/caddy/Caddyfile; then
         # Remove the site from the Caddyfile
