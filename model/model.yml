@@ -9,8 +9,8 @@ services:
       logging_jobname: "containerlogs"
     networks:
       - heurly-network
-    volumes:
-     - ./.env:/app/.env
+    #volumes:
+    # - ./.env:/app/.env
 
 networks: 
   heurly-network: 

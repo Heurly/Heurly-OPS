@@ -12,4 +12,5 @@ caddy/caddy_data
 containers/
 actions-runner/.credentials
 actions-runner/.credentials_rsaparams
-actions-runner/.path
+actions-runner/
+actions-runner/nohup.out

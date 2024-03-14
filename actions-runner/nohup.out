@@ -1,7 +1,51 @@
 
 √ Connected to GitHub
 
+A session for this runner already exists.
+2024-03-08 11:09:19Z: Runner connect error: The actions runner bao already has an active session for owner bao.. Retrying until reconnected.
+
+√ Connected to GitHub
+
+A session for this runner already exists.
+
+√ Connected to GitHub
+
+2024-03-08 11:10:22Z: Runner reconnected.
 Current runner version: '2.314.1'
-2024-03-07 20:25:34Z: Listening for Jobs
-2024-03-07 20:33:07Z: Running job: build
-2024-03-07 20:42:40Z: Job build completed with result: Succeeded
+2024-03-08 11:10:22Z: Listening for Jobs
+2024-03-08 13:05:41Z: Running job: build
+2024-03-08 13:16:01Z: Job build completed with result: Succeeded
+2024-03-08 16:49:16Z: Runner connect error: The HTTP request timed out after 00:01:00.. Retrying until reconnected.
+2024-03-08 16:50:33Z: Runner reconnected.
+2024-03-08 16:59:54Z: Runner connect error: The HTTP request timed out after 00:01:00.. Retrying until reconnected.
+2024-03-08 17:01:14Z: Runner reconnected.
+2024-03-09 09:46:24Z: Running job: build
+2024-03-09 09:47:06Z: Job build completed with result: Failed
+2024-03-09 09:49:35Z: Running job: build
+2024-03-09 09:51:03Z: Job build completed with result: Failed
+2024-03-09 09:52:28Z: Running job: build
+2024-03-09 10:01:15Z: Job build completed with result: Failed
+2024-03-09 10:15:13Z: Running job: build
+2024-03-09 10:16:46Z: Job build completed with result: Failed
+2024-03-09 14:51:21Z: Running job: build
+2024-03-09 15:05:56Z: Job build completed with result: Failed
+2024-03-09 15:40:29Z: Running job: build
+2024-03-09 15:56:07Z: Job build completed with result: Failed
+2024-03-10 23:28:57Z: Running job: build
+2024-03-10 23:32:57Z: Job build completed with result: Failed
+2024-03-10 23:37:52Z: Running job: build
+2024-03-10 23:41:41Z: Job build completed with result: Failed
+2024-03-12 07:33:23Z: Runner connect error: The HTTP request timed out after 00:01:00.. Retrying until reconnected.
+2024-03-12 07:34:33Z: Runner reconnected.
+2024-03-12 07:38:03Z: Runner connect error: The HTTP request timed out after 00:01:00.. Retrying until reconnected.
+2024-03-12 07:39:11Z: Runner reconnected.
+2024-03-12 07:58:34Z: Runner connect error: The HTTP request timed out after 00:01:00.. Retrying until reconnected.
+2024-03-12 07:59:46Z: Runner reconnected.
+2024-03-12 20:34:23Z: Runner connect error: The HTTP request timed out after 00:01:00.. Retrying until reconnected.
+2024-03-12 20:35:42Z: Runner reconnected.
+2024-03-12 20:38:22Z: Runner connect error: The HTTP request timed out after 00:01:00.. Retrying until reconnected.
+2024-03-12 20:39:43Z: Runner reconnected.
+2024-03-12 20:47:24Z: Runner connect error: The HTTP request timed out after 00:01:00.. Retrying until reconnected.
+2024-03-12 20:48:43Z: Runner reconnected.
+2024-03-14 02:15:46Z: Running job: build
+2024-03-14 02:26:31Z: Job build completed with result: Succeeded
