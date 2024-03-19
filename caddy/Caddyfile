@@ -22,10 +22,6 @@ logs.heurly.fr {
     
     
 beta.heurly.fr {
-        reverse_proxy beta.heurly:3003
-    }
-    
-devops-no-env-in-dockerfile.heurly.fr {
-        reverse_proxy devops-no-env-in-dockerfile.heurly:3003
-    }
+    reverse_proxy beta.heurly:3000
+}
     

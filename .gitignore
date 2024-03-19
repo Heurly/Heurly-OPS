@@ -10,8 +10,5 @@ caddy/caddy_data
 
 #ignore all the containers
 containers/
-actions-runner/.credentials
-actions-runner/.credentials_rsaparams
 actions-runner/
-actions-runner/nohup.out
 actions-runner/nohup.out

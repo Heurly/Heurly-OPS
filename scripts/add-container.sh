@@ -26,8 +26,7 @@ mkdir $url
 sed "s/{{SERVICE}}/$SERVICE/g" $racine/model/model.yml > $url/docker-compose.yml
 cd $url
 cp $racine/.env .env
-echo "NEXTAUTH_URL=https://$url" >> .env
-#echo "NEXT_PUBLIC_APP_URL=https://$url" >> .env
+echo -e "\nNEXTAUTH_URL=https://$url" >> .env
 docker compose pull
 docker compose up -d
 # Check if the site is already in the Caddyfile
@@ -37,7 +36,7 @@ if [ $SERVICE != "main" ]; then
         exit 0
     else
         echo "$url {
-        reverse_proxy $SERVICE.heurly:3003
+        reverse_proxy $SERVICE.heurly:3000
     }
     " >> "$racine/caddy/Caddyfile"
         echo "Site ($url) added in the Caddyfile"
