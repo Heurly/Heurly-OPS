@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  heurly:
+    image: domesday/heurly:main
+    labels:
+      logging: "promtail"
+      logging_jobname: "containerlogs"
+    env_file:
+      - main.env
+    networks:
+      - traefik-public
+    deploy:
+      mode: replicated
+      replicas: 1
+      update_config:
+        order: start-first
+        failure_action: rollback
+        delay: 5s
+      labels:
+        - traefik.enable=true
+        - traefik.docker.lbswarm=true
+        - traefik.docker.network=traefik-public
+        - traefik.contraint-label=traefik-public
+        - traefik.http.routers.heurly-prod-http.rule=Host(`heurly.fr`)
+        - traefik.http.routers.heurly-prod-http.entrypoints=http
+        - traefik.http.routers.heurly-prod-http.middlewares=https-redirect
+        - traefik.http.routers.heurly-prod-https.rule=Host(`heurly.fr`)
+        - traefik.http.routers.heurly-prod-https.entrypoints=https
+        - traefik.http.routers.heurly-prod-https.tls=true
+        - traefik.http.routers.heurly-prod-https.tls.certresolver=le
+        - traefik.http.services.heurly-prod.loadbalancer.server.port=3000
+
+networks: 
+  traefik-public:
+    external: true

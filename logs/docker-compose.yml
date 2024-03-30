@@ -3,7 +3,6 @@ version: '3.8'
 services:
   grafana:
     image: grafana/grafana:latest
-    container_name: grafana
     volumes:
       - ./config/grafana-datasources.yml:/etc/grafana/provisioning/datasources/datasources.yaml
       - ./config/dashboard.yaml:/etc/grafana/provisioning/dashboards/main.yaml
@@ -30,22 +29,36 @@ services:
         EOF
         /run.sh
     networks:
-      - heurly-network
-    expose:
-      - 3000
+      - traefik-public
+    deploy:
+      mode: replicated
+      replicas: 1
+      update_config:
+        order: start-first
+        failure_action: rollback
+        delay: 5s
+      labels:
+        - traefik.enable=true
+        - traefik.docker.lbswarm=true
+        - traefik.docker.network=traefik-public
+        - traefik.contraint-label=traefik-public
+        - traefik.http.routers.logs-http.rule=Host(`logs.heurly.fr`)
+        - traefik.http.routers.logs-http.entrypoints=http
+        - traefik.http.routers.logs-http.middlewares=https-redirect
+        - traefik.http.routers.logs-https.rule=Host(`logs.heurly.fr`)
+        - traefik.http.routers.logs-https.entrypoints=https
+        - traefik.http.routers.logs-https.tls=true
+        - traefik.http.routers.logs-https.tls.certresolver=le
+        - traefik.http.services.logs.loadbalancer.server.port=3000
 
   loki:
     image: grafana/loki:latest
-    container_name: loki
     command: -config.file=/etc/loki/local-config.yaml
     networks:
-      - heurly-network
-    expose:
-      - 3100
+      - traefik-public
 
   promtail:
     image:  grafana/promtail:latest
-    container_name: promtail
     volumes:
       - ./config/promtail.yaml:/etc/promtail/docker-config.yaml
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
@@ -54,8 +67,8 @@ services:
     depends_on:
       - loki
     networks:
-      - heurly-network
+      - traefik-public
 
 networks:
-  heurly-network: 
+  traefik-public: 
     external: true
