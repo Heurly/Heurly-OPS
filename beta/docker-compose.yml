@@ -7,7 +7,7 @@ services:
       logging: "promtail"
       logging_jobname: "containerlogs"
     env_file:
-      - beta.env
+      - .env
     networks:
       - traefik-public
     deploy:
